@@ -1,0 +1,614 @@
+/* محاذاة الصفحة بالكامل في منتصف الشاشة */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    /*شفافية80% */
+   background: rgba(255, 255, 255, 0.55); 
+}
+
+.task {
+    background-color: rgba(255, 255, 255, 0.75); /* خلفية المهمة مع شفافية */
+    border: 1px solid #ccc; /* حدود خفيفة */
+    padding: 10px; /* مساحة داخلية */
+    margin: 5px 0; /* مسافة بين المهام */
+    border-radius: 5px; /* زوايا دائرية */
+}
+
+.task.completed {
+    background-color: rgba(200, 255, 200, 0.55); /* خلفية مهام مكتملة مع شفافية */
+}
+
+/* جعل الفورم أيضًا شفافًا */
+#taskForm {
+    background-color: rgba(255, 255, 255, 0.55); /* شفافية للفورم */
+ 
+
+}
+
+/* ضبط خصائص الحاوية الرئيسية */
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* محاذاة المحتوى بداخل الحاوية في المنتصف */
+}
+
+h1 {
+    color: #0077b6;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center; /* محاذاة عناصر النموذج في المنتصف */
+}
+
+input[type="text"], input[type="date"], input[type="submit"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #0077b6;
+    outline: none;
+    width: 90%; /* عرض الإدخالات قريب من عرض الحاوية */
+}
+
+input[type="submit"] {
+    background-color: #0077b6;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #005f8e;
+}
+
+.task-list {
+    margin-top: 20px;
+    width: 100%; /* جعل قائمة المهام تأخذ عرض الحاوية */
+}
+
+.task {
+    background-color: #e0f7fa;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.task span, .task button {
+    border-right: 1px solid #ddd; /* خط فاصل خفيف */
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+.task span:last-child, .task button:last-child {
+    border-right: none; /* إزالة الخط من آخر عنصر */
+}
+
+.task span {
+    font-size: 16px;
+}
+
+.task .task-date {
+    font-size: 14px;
+    color: #555;
+    margin-left: 5px;
+}
+
+.task button {
+    background-color: #ff5252;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.task button:hover {
+    background-color: #ff1744;
+}
+
+.task.completed span {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task button.edit {
+    background-color: #4caf50;
+    margin-right: 10px;
+}
+
+.task button.edit:hover {
+    background-color: #388e3c;
+}
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0077b6;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    animation: fade-in-out 3s forwards;
+}
+
+@keyframes fade-in-out {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }#42445A
+}
+
+#dateTime {
+    text-align: center;
+    font-size: 18px;
+    color: #0077b6;
+    margin-bottom: 15px;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.15); /* شفافية للحاوية */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* محاذاة المحتوى بداخل الحاوية في المنتصف */
+}
+
+#taskForm {
+    background-color: rgba(255, 255, 255, 0.37); /* شفافية للفورم */
+    border-radius: 5px; /* زوايا دائرية */
+    padding: 10px; /* مساحة داخلية */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.container {
+    animation: fadeIn 1s ease-in-out; /* تطبيق تأثير الظهور */
+}
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%); /* يبدأ من خارج الشاشة */
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.task {
+    animation: slideIn 0.5s ease-out; /* تطبيق تأثير الحركة */
+}
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5); /* يبدأ صغيراً */
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.task {
+    animation: zoomIn 0.5s ease-out; /* تطبيق تأثير التكبير */
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.task button {
+    animation: rotate 0.5s ease-in-out; /* تطبيق تأثير الدوران */
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); /* العودة إلى الوضع الأصلي */
+    }
+    40% {
+        transform: translateY(-30px); /* الانبثاق لأعلى */
+    }
+    60% {
+        transform: translateY(-15px); /* العودة لأسفل قليلاً */
+    }
+}
+
+h1 {
+    animation: bounce 2s; /* تطبيق تأثير الانبثاق */
+}
+
+h1 {
+  color:#D12626
+  
+}
+
+.icon {
+    background-color: #4A5CCF; /* لون أزرق  */
+    border-radius: 5px; /* زوايا دائرية */
+    padding: 10px; /* مساحة داخلية */
+    display: inline-block; /* لجعل العنصر يأخذ مساحة مناسبة حول المحتوى */
+}
+
+.icon h1 {
+    margin: 0; /* إزالة الهوامش الافتراضية */
+    color: white; /* جعل النص باللون الأبيض */
+}
+
+#dateTime {
+    background-color: yellow; /* خلفية صفراء */
+    padding: 10px; /* مساحة داخلية */
+    border-radius: 5px; /* زوايا دائرية */
+    font-weight: bold; /* جعل النص عريض */
+    display: inline-block; /* لضبط حجم الخلفية حول النص */
+}
+
+.task-number {
+    background-color: yellow; /* خلفية صفراء */
+    color: blue; /* لون النص أزرق */
+    font-weight: bold; /* خط عريض للرقم */
+    padding: 5px 10px; /* مساحة داخلية للرقم */
+    border-radius: 5px; /* زوايا دائرية */
+    margin-right: 10px; /* مسافة على اليمين */
+    display: inline-block;
+    min-width: 30px; /* ضبط عرض الرقم */
+    text-align: center;
+}
+
+/* إضافة مسافة بسيطة بين "مهامي اليومية" والتاريخ المباشر */
+#dateTime {
+    margin-top: 10px; /* يمكنك تعديل القيمة حسب المسافة المطلوبة */
+}
+.date-container {
+    position: relative;
+}
+
+.date-label {
+    position: absolute;
+    top: -20px; /* يجعل النص يظهر فوق حقل التاريخ */
+    left: 5px;
+    font-size: 14px;
+    color: #555; /* لون النص */
+}
+
+/* الأساسيات */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* التنسيق الرئيسي */
+.container {
+    max-width: 550px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* تنسيق المهام */
+.task {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* تخصيص الأسلوب للأجهزة الصغيرة */
+@media (max-width: 550px) {
+    .task {
+        flex-direction: column; /* تغيير الاتجاه إلى عمودي  */
+        align-items: flex-start; /* محاذاة العناصر إلى اليسار */
+    }
+
+    .task span {
+        margin-bottom: 5px; /* إضافة مسافة بين العناصر */
+    }
+
+    #taskForm {
+        display: flex;
+        flex-direction: column; /* تغيير الاتجاه إلى عمودي */
+    }
+
+    #taskInput, #taskDate {
+        width: 100%; /* جعل الحقول تأخذ العرض الكامل */
+        margin-bottom: 10px; /* إضافة مسافة بين الحقول */
+    }
+
+    .date-container {
+        margin-top: 10px; /* إضافة مسافة فوق حقل التاريخ */
+    }
+
+    .date-label {
+        font-size: 12px; /* تقليل حجم الخط */
+    }
+}
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF; /* لون أزرق */
+    color: white;
+    cursor: pointer;
+}
+
+/* تخصيص الأزرار للأجهزة الصغيرة */
+@media (max-width: 600px) {
+    button {
+        width: 100%; /* جعل الأزرار تأخذ العرض الكامل */
+        margin-top: 5px; /* إضافة مسافة بين الأزرار */
+    }
+}
+
+button {
+    display: inline-block; /* تأكد من أن الزر يظهر */
+    padding: 10px 15px; /* بعض الحشوة لجعل الزر أكبر */
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF; /* لون الزر */
+    color: white;
+    cursor: pointer;
+}
+
+/* تأكد من عدم وجود أنماط تخفي الزر */
+button.hidden {
+    display: none; /* إذا كنت تستخدم هذا لإخفاء الزر */
+}
+
+h1 {
+    color: #3b5998;
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* حاوية شريط التقدم */
+#progressContainer {
+    width: 100%;
+    background-color: #e0e0e0; /* لون الخلفية */
+    border-radius: 10px; /* زوايا مستديرة */
+    margin-top: 10px; /* مسافة من الأعلى */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* ظل */
+}
+
+/* شريط التقدم نفسه */
+#progressBar {
+    width: 0; /* عرض الشريط في البداية */
+    height: 30px; /* ارتفاع الشريط */
+    background-color: #0000FF; /* لون الشريط أزرق */
+    text-align: center; /* محاذاة النص في الوسط */
+    line-height: 30px; /* محاذاة النص عمودياً */
+    color: #FFFF00; /* لون النص (رقم النسبة) أصفر */
+    border-radius: 10px; /* زوايا مستديرة */
+    transition: width 0.5s; /* تأثير الانتقال عند تغيير العرض */
+}
+
+/* تأثير عند تجاوز شريط التقدم */
+#progressBar.complete {
+    background-color: #0000FF; /* لون مختلف عند الاكتمال (يبقى أزرق) */
+}
+
+
+
+h3 {
+  color: #FFF800;
+  background-color:#B800FF;
+  font-weight:bold;
+ 
+}
+
+/* تنسيق عنوان h3 */
+h3 {
+    background-color:#6D2AFF;  /* لون الخلفية */
+    color: #FFF73A;               /* لون النص */
+    text-align: center;        /* محاذاة النص إلى الوسط */
+    padding: 10px;            /* حواف داخلية */
+    border-radius: 5px;       /* زوايا دائرية */
+    font-size: 20px;          /* حجم الخط */
+    font-weight: bold;        /* جعل النص عريض */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* ظل خفيف */
+    margin: 10px 0;           /* هوامش علوية وسفلية */
+}
+
+
+/* إطار متحرك بألوان متغيرة بين الأحمر والأزرق */
+@keyframes rainbowBorder {
+    0% { border-color: red; }
+    50% { border-color: blue; }
+    100% { border-color: red; }
+}
+
+.container {
+    border: 8px solid; /* تحديد عرض الإطار */
+    border-radius: 15px; /* تحديد حواف دائرية */
+    animation: rainbowBorder 3s linear infinite; /* تطبيق التحريك */
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.18); /* إضافة خلفية شفافة */
+}
+
+/* تحسين عرض الحقول والأزرار */
+input[type="text"],
+input[type="date"],
+input[type="submit"] {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+/* تكيف عناصر التصميم لشاشة الجوال */
+@media (max-width: 600px) {
+    .container {
+        max-width: 90%; /* تقليل عرض الحاوية على الجوال */
+        padding: 10px;
+        border-width: 5px; /* تقليل عرض الإطار على الجوال */
+    }
+
+    .icon h1 {
+        font-size: 1.5em; /* تقليل حجم العنوان على الجوال */
+        text-align: center;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
+.header-container {
+    background-color: rgba(0, 123, 255, 0.25); /* خلفية زرقاء مع شفافية 50% */
+    color: white; /* لون النص */
+    padding: 15px 0; /* مسافة داخلية عمودية فقط */
+    text-align: center; /* توسيط النص */
+    border-radius: 10px; /* حواف دائرية */
+    width: 100%; /* تمديد العرض الكامل */
+    box-sizing: border-box; /* ضمان أن padding لا يؤثر على العرض */
+    margin: 0; /* إزالة أي مسافات خارجية */
+}
+
+
+
+button {
+    background-color: #007BFF; /* لون خلفية زر */
+    color: white; /* لون النص */
+    border: none; /* إزالة الحدود */
+    border-radius: 5px; /* حواف دائرية */
+    padding: 10px 15px; /* مساحة داخلية */
+    cursor: pointer; /* تغيير شكل المؤشر عند المرور */
+    transition: background-color 0.3s; /* تأثير الانتقال */
+}
+
+button:hover {
+    background-color: #0056b3; /* لون الزر عند التمرير */
+}
+
+
+
+
+.task {
+    border-bottom: 1px solid #ddd; /* خط فاصل */
+    padding: 10px 0; /* مسافة عمودية */
+}
+
+.task:last-child {
+    border-bottom: none; /* إزالة الخط الفاصل من آخر مهمة */
+}
+
+
+.task:hover {
+    background-color: rgba(255 , 0, 255, 0.2); /* لون الخلفية عند التمرير */
+}
+
+body {
+    background: linear-gradient(135deg, #6e7f80, #3b4e66); /* تدرج ألوان */
+    color: blue; /* لون النص */
+    font-family: Arial, sans-serif; /* نوع الخط */
+}
+
+
+
+* {
+    transition: all 0.3s ease-in-out; /* تطبيق تأثير سلس لجميع العناصر */
+}
+
+.container, .task, .info-box {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* إضافة ظل ناعم */
+}
+
+button, input[type="submit"] {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* ظل خفيف للأزرار */
+}
+
+button:hover, input[type="submit"]:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* ظل أعمق عند التمرير */
+}
+
+button, input[type="submit"] {
+    background-color: #007BFF; /* خلفية زرقاء */
+    color: #fff; /* لون النص */
+    border: none;
+    border-radius: 25px; /* حواف دائرية كاملة */
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* تأثير الانتقال */
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #0056b3; /* لون مختلف عند التمرير */
+    transform: scale(1.05); /* تكبير خفيف عند التمرير */
+}
+
+.task {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #f7f9fc; /* خلفية خفيفة */
+    border-left: 5px solid #007bff; /* خط أيسر بألوان مميزة */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.task:hover {
+    background-color: rgba(255, 0, 255, 0.1); /* تأثير تغيير الخلفية عند التمرير */
+}
+
+.icon h1 {
+    color: #FFF500;
+    font-weight: bold;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* ظل للنص */
+    margin-bottom: 10px;
+}
+
+
+.header-container h3 {
+    font-style: italic; /* لجعل النص مائل */
+    color:#FFE800; /* يمكنك تغيير اللون حسب رغبتك */
+}
+ 
+ 
+ 
