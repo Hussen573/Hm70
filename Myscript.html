@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مهامي اليومية</title>
+    <link rel="stylesheet" type="text/css" href="Styley.css">
+</head>
+<body>
+  
+    <div class="container">
+        <!-- الحاوية الخاصة بالعنوان والمربع الجانبي -->
+        <div class="header-container">
+            <div class="icon">
+                <h1>مهامي الشخصية</h1>
+            </div>
+            <!-- مربع "برمجة وتطوير" بجانب العنوان -->
+            <div class="info-box">
+               <h3 class"italic">بــرمــجـــة و تـطــويــر : حــســـيــن حــمــدي Hm70  </h3>
+            </div>
+        </div>
+
+        <div id="dateTime"></div>
+
+        <form id="taskForm">
+       
+            <input type="text" id="taskInput" placeholder="أضف مهمة جديدة" required>
+            <input type="date" id="taskDate" required>
+            <input type="submit" value="إضافة مهمة">
+        </form>
+
+        <!-- شريط التقدم -->
+        <div id="progressContainer">
+            <div id="progressBar">0%</div>
+        </div>
+
+        <div class="task-list" id="taskList">
+            <!-- قائمة المهام ستظهر هنا -->
+        </div>
+    </div>
+    
+    <script src="Scripty.js"></script>
+</body>
+</html>
+
+
+
+
+
